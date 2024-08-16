@@ -1,0 +1,30 @@
+name: Git configure
+description: 'Configure git user and email'
+
+author: 'Bisshwajit Samanta'
+
+inputs:
+  branch:
+    description: Git branch name, where changes should be pushed to.
+    required: false
+    default: ${{ github.head_ref }}
+
+  create_orphan_branch:
+    description: 'Create a new orphan branch'
+    required: false
+    default: "deployment"
+
+  config_user:
+    description: 'Configure git user'
+    required: false
+    default: "Github Actions"
+
+  config_email:
+    description: 'Configure git email'
+    required: false
+    default: "actions@github.com"
+
+runs:
+  using: docker
+  image: 'python:3.8'
+  entrypoint: python3 ./main.py
