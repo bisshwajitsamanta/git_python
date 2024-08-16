@@ -26,5 +26,5 @@ inputs:
 
 runs:
   using: docker
-  image: './Dockerfile'
-  entrypoint: python3 ./main.py
+  image: 'Dockerfile'
+  entrypoint: 'python3 /app/main.py'
